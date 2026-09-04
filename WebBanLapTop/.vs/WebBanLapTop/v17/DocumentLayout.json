@@ -3,6 +3,14 @@
   "WorkspaceRootPath": "D:\\ASPNET-dt24tt80161-nguyenkhacanhvan-DEMO\\WebBanLapTop\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{ACB947A3-04D1-4A41-9BA5-550D26B54F81}|WebBanLapTop\\WebBanLapTop.csproj|d:\\aspnet-dt24tt80161-nguyenkhacanhvan-demo\\webbanlaptop\\webbanlaptop\\views\\home\\productdetail.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{ACB947A3-04D1-4A41-9BA5-550D26B54F81}|WebBanLapTop\\WebBanLapTop.csproj|solutionrelative:webbanlaptop\\views\\home\\productdetail.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ACB947A3-04D1-4A41-9BA5-550D26B54F81}|WebBanLapTop\\WebBanLapTop.csproj|d:\\aspnet-dt24tt80161-nguyenkhacanhvan-demo\\webbanlaptop\\webbanlaptop\\webbanlaptop.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{ACB947A3-04D1-4A41-9BA5-550D26B54F81}|WebBanLapTop\\WebBanLapTop.csproj|solutionrelative:webbanlaptop\\webbanlaptop.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{ACB947A3-04D1-4A41-9BA5-550D26B54F81}|WebBanLapTop\\WebBanLapTop.csproj|d:\\aspnet-dt24tt80161-nguyenkhacanhvan-demo\\webbanlaptop\\webbanlaptop\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{ACB947A3-04D1-4A41-9BA5-550D26B54F81}|WebBanLapTop\\WebBanLapTop.csproj|solutionrelative:webbanlaptop\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
@@ -22,11 +30,37 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "WebBanLapTop",
+              "DocumentMoniker": "D:\\ASPNET-dt24tt80161-nguyenkhacanhvan-DEMO\\WebBanLapTop\\WebBanLapTop\\WebBanLapTop.csproj",
+              "RelativeDocumentMoniker": "WebBanLapTop\\WebBanLapTop.csproj",
+              "ToolTip": "D:\\ASPNET-dt24tt80161-nguyenkhacanhvan-DEMO\\WebBanLapTop\\WebBanLapTop\\WebBanLapTop.csproj",
+              "RelativeToolTip": "WebBanLapTop\\WebBanLapTop.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-09-04T08:33:14.429Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "ProductDetail.cshtml",
+              "DocumentMoniker": "D:\\ASPNET-dt24tt80161-nguyenkhacanhvan-DEMO\\WebBanLapTop\\WebBanLapTop\\Views\\Home\\ProductDetail.cshtml",
+              "RelativeDocumentMoniker": "WebBanLapTop\\Views\\Home\\ProductDetail.cshtml",
+              "ToolTip": "D:\\ASPNET-dt24tt80161-nguyenkhacanhvan-DEMO\\WebBanLapTop\\WebBanLapTop\\Views\\Home\\ProductDetail.cshtml",
+              "RelativeToolTip": "WebBanLapTop\\Views\\Home\\ProductDetail.cshtml",
+              "ViewState": "AgIAADsBAAAAAAAAAAAAAJgBAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-09-04T08:31:58.497Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "Index.cshtml",
               "DocumentMoniker": "D:\\ASPNET-dt24tt80161-nguyenkhacanhvan-DEMO\\WebBanLapTop\\WebBanLapTop\\Views\\Home\\Index.cshtml",
               "RelativeDocumentMoniker": "WebBanLapTop\\Views\\Home\\Index.cshtml",
@@ -39,7 +73,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "site.css",
               "DocumentMoniker": "D:\\ASPNET-dt24tt80161-nguyenkhacanhvan-DEMO\\WebBanLapTop\\WebBanLapTop\\wwwroot\\css\\site.css",
               "RelativeDocumentMoniker": "WebBanLapTop\\wwwroot\\css\\site.css",
@@ -47,12 +81,11 @@
               "RelativeToolTip": "WebBanLapTop\\wwwroot\\css\\site.css",
               "ViewState": "AgIAACgAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2026-09-02T05:55:45.244Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-09-02T05:55:45.244Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "D:\\ASPNET-dt24tt80161-nguyenkhacanhvan-DEMO\\WebBanLapTop\\WebBanLapTop\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "WebBanLapTop\\Views\\Shared\\_Layout.cshtml",
@@ -60,8 +93,7 @@
               "RelativeToolTip": "WebBanLapTop\\Views\\Shared\\_Layout.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAABoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-09-02T05:53:33.487Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-09-02T05:53:33.487Z"
             }
           ]
         }

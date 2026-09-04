@@ -18,6 +18,11 @@ namespace WebBanLapTop.Controllers
             return View();
         }
 
+        public IActionResult ProductDetail()
+        {
+            return View();
+        }
+
         public IActionResult Privacy()
         {
             return View();
