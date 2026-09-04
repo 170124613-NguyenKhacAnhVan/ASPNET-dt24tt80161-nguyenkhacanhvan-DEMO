@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "D:\\ASPNET-dt24tt80161-nguyenkhacanhvan-DEMO\\WebBanLapTop\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{ACB947A3-04D1-4A41-9BA5-550D26B54F81}|WebBanLapTop\\WebBanLapTop.csproj|d:\\aspnet-dt24tt80161-nguyenkhacanhvan-demo\\webbanlaptop\\webbanlaptop\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{ACB947A3-04D1-4A41-9BA5-550D26B54F81}|WebBanLapTop\\WebBanLapTop.csproj|solutionrelative:webbanlaptop\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{ACB947A3-04D1-4A41-9BA5-550D26B54F81}|WebBanLapTop\\WebBanLapTop.csproj|d:\\aspnet-dt24tt80161-nguyenkhacanhvan-demo\\webbanlaptop\\webbanlaptop\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{ACB947A3-04D1-4A41-9BA5-550D26B54F81}|WebBanLapTop\\WebBanLapTop.csproj|solutionrelative:webbanlaptop\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ACB947A3-04D1-4A41-9BA5-550D26B54F81}|WebBanLapTop\\WebBanLapTop.csproj|d:\\aspnet-dt24tt80161-nguyenkhacanhvan-demo\\webbanlaptop\\webbanlaptop\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{ACB947A3-04D1-4A41-9BA5-550D26B54F81}|WebBanLapTop\\WebBanLapTop.csproj|solutionrelative:webbanlaptop\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,29 +18,29 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "site.css",
               "DocumentMoniker": "D:\\ASPNET-dt24tt80161-nguyenkhacanhvan-DEMO\\WebBanLapTop\\WebBanLapTop\\wwwroot\\css\\site.css",
               "RelativeDocumentMoniker": "WebBanLapTop\\wwwroot\\css\\site.css",
-              "ToolTip": "D:\\ASPNET-dt24tt80161-nguyenkhacanhvan-DEMO\\WebBanLapTop\\WebBanLapTop\\wwwroot\\css\\site.css*",
-              "RelativeToolTip": "WebBanLapTop\\wwwroot\\css\\site.css*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAgAAAAAAAAAA==",
+              "ToolTip": "D:\\ASPNET-dt24tt80161-nguyenkhacanhvan-DEMO\\WebBanLapTop\\WebBanLapTop\\wwwroot\\css\\site.css",
+              "RelativeToolTip": "WebBanLapTop\\wwwroot\\css\\site.css",
+              "ViewState": "AgIAACgAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
               "WhenOpened": "2026-09-02T05:55:45.244Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "D:\\ASPNET-dt24tt80161-nguyenkhacanhvan-DEMO\\WebBanLapTop\\WebBanLapTop\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "WebBanLapTop\\Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "D:\\ASPNET-dt24tt80161-nguyenkhacanhvan-DEMO\\WebBanLapTop\\WebBanLapTop\\Views\\Shared\\_Layout.cshtml*",
-              "RelativeToolTip": "WebBanLapTop\\Views\\Shared\\_Layout.cshtml*",
+              "ToolTip": "D:\\ASPNET-dt24tt80161-nguyenkhacanhvan-DEMO\\WebBanLapTop\\WebBanLapTop\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "WebBanLapTop\\Views\\Shared\\_Layout.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAABoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2026-09-02T05:53:33.487Z",
