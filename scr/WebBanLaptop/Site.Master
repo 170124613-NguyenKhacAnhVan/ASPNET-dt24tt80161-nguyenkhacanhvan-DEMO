@@ -1,0 +1,112 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="WebBanLaptop.Site" %>
+
+<!DOCTYPE html>
+<html lang="vi">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Máy tính Đăng Khoa</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+    <asp:ContentPlaceHolder ID="head" runat="server"></asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <header class="header">
+            <div class="container header-inner">
+                <a class="logo" href="Default.aspx">
+                    <img src="images/LOGO DANG KHOA WHITE.png" alt="Máy tính Đăng Khoa" height="60" />
+                </a>
+                
+                <div class="header-menu">
+                    <a class="btn-category" href="#">
+                        <i class="bi bi-list"></i>
+                        <strong>Danh mục</strong>
+                    </a>
+                </div>
+                
+                <div class="search-box">
+                    <div class="input-group">
+                        <input type="search" placeholder="Tìm kiếm laptop..." />
+                        <button type="button">
+                            <i class="bi bi-search"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="header-actions">
+                    <a class="action-item cart-wrapper" href="#">
+                        <i class="bi bi-cart3"></i>
+                        <span class="badge">0</span>
+                    </a>
+                    <a class="action-item" href="Login.aspx">
+                        <i class="bi bi-person-circle"></i>
+                    </a>
+                </div>
+            </div>
+        </header>
+
+        <div class="container main-content">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server"></asp:ContentPlaceHolder>
+        </div>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-col">
+                        <img src="images/LOGO DANG KHOA.png" alt="Máy tính Đăng Khoa" height="100" class="footer-logo" />
+                        <p><i class="bi bi-geo-alt-fill"></i>39 Trần Khát Chân, Thôn Thiện Trung, Phường Mũi Né, Tỉnh Lâm Đồng</p>
+                        <p><i class="bi bi-telephone-fill"></i>Hotline: 0944.484.818</p>
+                        <p><i class="bi bi-envelope-fill"></i>Email: hotro@dangkhoa.com</p>
+                    </div>
+                    
+                    <div class="footer-col">
+                        <h5>Về chúng tôi</h5>
+                        <ul>
+                            <li><a href="#">Giới thiệu công ty</a></li>
+                            <li><a href="#">Tuyển dụng</a></li>
+                            <li><a href="#">Tin tức công nghệ</a></li>
+                            <li><a href="#">Liên hệ</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-col">
+                        <h5>Chính sách</h5>
+                        <ul>
+                            <li><a href="#">Hướng dẫn mua hàng</a></li>
+                            <li><a href="#">Chính sách bảo hành</a></li>
+                            <li><a href="#">Chính sách kiểm hàng</a></li>
+                            <li><a href="#">Chính sách đổi trả</a></li>
+                            <li><a href="#">Giao hàng & Lắp đặt</a></li>
+                            <li><a href="#">Chính sách bảo mật</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-col">
+                        <h5>Kết nối với chúng tôi</h5>
+                        <div class="social-links">
+                            <a href="#"><i class="bi bi-facebook"></i></a>
+                            <a href="#"><i class="bi bi-youtube"></i></a>
+                            <a href="#"><i class="bi bi-tiktok"></i></a>
+                        </div>
+                        
+                        <h5 class="mt-4">Thanh toán</h5>
+                        <div class="payment-links">
+                            <i class="bi bi-cash-coin"></i>
+                            <i class="bi bi-credit-card"></i>
+                            <i class="bi bi-paypal"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <hr class="footer-divider" />
+                
+                <div class="footer-bottom">
+                    <p>&copy; 2026 - Bản quyền thuộc về Camera Máy tính Đăng Khoa.</p>
+                </div>
+            </div>
+        </footer>
+    </form>
+    <script src="js/main.js"></script>
+</body>
+</html>

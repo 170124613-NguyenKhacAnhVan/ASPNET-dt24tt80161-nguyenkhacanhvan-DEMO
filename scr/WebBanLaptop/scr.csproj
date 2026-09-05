@@ -67,8 +67,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="css\style.css" />
     <Content Include="Default.aspx" />
     <Content Include="Global.asax" />
+    <Content Include="images\LOGO DANG KHOA WHITE.png" />
+    <Content Include="images\LOGO DANG KHOA.png" />
+    <Content Include="js\main.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -84,9 +88,16 @@
     </Compile>
     <Compile Include="Ketnoi.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Site.Master.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Site.Master.designer.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <Content Include="Site.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
