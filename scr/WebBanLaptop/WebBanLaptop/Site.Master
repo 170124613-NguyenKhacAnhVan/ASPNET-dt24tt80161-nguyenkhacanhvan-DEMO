@@ -38,51 +38,85 @@
             </Scripts>
         </asp:ScriptManager>
 
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-danger border-bottom box-shadow mb-3 py-2">
-            <div class="container">
-                <a class="navbar-brand me-4" href="Default.aspx">
-                    <asp:Image ID="imgLogoHeader" runat="server" ImageUrl="~/Images/LOGO DANG KHOA WHITE.png" AlternateText="Máy tính Đăng Khoa" Height="60px" />
+        <nav class="navbar navbar-expand-lg navbar-dark bg-danger border-bottom box-shadow mb-3 py-2">
+            <div class="container justify-content-between">
+                <a class="navbar-brand me-0 me-lg-4" href="Default.aspx">
+                    <asp:Image ID="imgLogoHeader" runat="server"
+                        ImageUrl="~/Images/LOGO DANG KHOA WHITE.png"
+                        AlternateText="Máy tính Đăng Khoa"
+                        CssClass="img-fluid"
+                        Style="max-height: 55px; width: auto;" />
                 </a>
 
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse"
-                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+                <div class="d-flex align-items-center order-lg-3 ms-auto ms-lg-0 gap-3 gap-xl-4">
 
-                <div class="navbar-collapse collapse d-sm-inline-flex align-items-center">
-                    <ul class="navbar-nav me-auto">
-                        <li class="nav-item">
-                            <a class="nav-link text-white rounded px-3 d-flex align-items-center" href="Default.aspx" style="background-color: #a30000;">
-                                <i class="bi bi-list fs-5 me-2"></i>
-                                <strong>Danh mục</strong>
-                            </a>
-                        </li>
-                    </ul>
+                    <!-- TRẠNG THÁI 1: CHƯA ĐĂNG NHẬP -->
+                    <asp:Panel ID="pnlChuaDangNhap" runat="server">
+                        <a class="nav-link text-white d-flex align-items-center gap-2 p-1 text-nowrap" href="TrangDangNhap.aspx" title="Đăng nhập / Đăng ký">
+                            <i class="bi bi-person-circle fs-2"></i>
+                            <div class="d-none d-sm-flex flex-column lh-sm">
+                                <span class="fw-semibold" style="font-size: 0.9rem;">Đăng nhập</span>
+                                <small class="text-white-50" style="font-size: 0.8rem;">Đăng ký</small>
+                            </div>
+                        </a>
+                    </asp:Panel>
 
-                    <div class="d-flex flex-grow-1 mx-4">
-                        <div class="input-group">
-                            <asp:TextBox ID="txtTimKiemHeader" runat="server" CssClass="form-control border-0" placeholder="Tìm kiếm laptop..."></asp:TextBox>
-                            <asp:LinkButton ID="btnTimKiemHeader" runat="server" CssClass="btn btn-light text-danger bg-white border-0" OnClick="btnTimKiemHeader_Click">
-                        <i class="bi bi-search"></i>
-                    </asp:LinkButton>
-                        </div>
-                    </div>
-
-                    <ul class="navbar-nav ms-auto align-items-center gap-3">
-                        <li class="nav-item me-3">
-                            <a class="nav-link text-white position-relative" href="GioHang.aspx">
-                                <i class="bi bi-cart3 fs-3"></i>
-                                <span class="position-absolute top-10 start-100 translate-middle badge rounded-pill bg-warning text-dark">
-                                    <asp:Label ID="lblSoLuongGioHang" runat="server" Text="0"></asp:Label>
+                    <!-- TRẠNG THÁI 2: ĐÃ ĐĂNG NHẬP -->
+                    <asp:Panel ID="pnlDaDangNhap" runat="server" Visible="false" CssClass="d-flex align-items-center gap-2">
+                        <a class="nav-link text-white d-flex align-items-center gap-2 p-1 text-nowrap" href="TrangHoSo.aspx" title="Xem hồ sơ cá nhân">
+                            <asp:Image ID="imgAvatarNav" runat="server"
+                                ImageUrl="~/Images/default-avatar.png"
+                                CssClass="rounded-circle border border-2 border-warning object-fit-cover bg-white"
+                                Style="width: 40px; height: 40px;" />
+                            <div class="d-none d-sm-flex flex-column lh-sm">
+                                <small class="text-warning" style="font-size: 0.75rem;">Xin chào,</small>
+                                <span class="fw-bold text-white text-truncate" style="font-size: 0.9rem; max-width: 130px;">
+                                    <asp:Label ID="lblTenNguoiDungNav" runat="server" Text="Khách hàng"></asp:Label>!
                                 </span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white" href="Login.aspx" title="Đăng nhập / Quản trị">
-                                <i class="bi bi-person-circle fs-3"></i>
-                            </a>
-                        </li>
-                    </ul>
+                            </div>
+                        </a>
+
+                        <!-- Nút Đăng xuất nằm ngay trên thanh Nav -->
+                        <asp:LinkButton ID="btnDangXuatNav" runat="server"
+                            CssClass="btn btn-sm btn-outline-light border-opacity-50 px-2 py-1 ms-1"
+                            ToolTip="Đăng xuất"
+                            CausesValidation="false"
+                            OnClick="btnDangXuatNav_Click">
+                                <i class="bi bi-box-arrow-right"></i>
+                                <span class="d-none d-xl-inline ms-1 small">Thoát</span>
+                        </asp:LinkButton>
+                    </asp:Panel>
+
+                    <a class="nav-link text-white d-flex align-items-center gap-2 p-1 text-nowrap" href="GioHang.aspx" title="Giỏ hàng">
+                        <div class="position-relative">
+                            <i class="bi bi-cart3 fs-2"></i>
+                        </div>
+                        <div class="d-flex flex-column lh-sm">
+                            <span class="d-none d-sm-inline fw-semibold" style="font-size: 0.9rem;">Giỏ hàng của bạn</span>
+                            <small class="text-warning fw-bold" style="font-size: 0.85rem;">(<asp:Label ID="lblSoLuongGioHang" runat="server" Text="0"></asp:Label>)
+                        <span class="d-none d-sm-inline text-white fw-normal">sản phẩm</span>
+                            </small>
+                        </div>
+                    </a>
+
+                    <button class="navbar-toggler ms-1" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain"
+                        aria-controls="navbarMain" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+
+                <div class="collapse navbar-collapse order-lg-2 flex-grow-1 mt-3 mt-lg-0 mx-0 mx-lg-4" id="navbarMain">
+                    <div class="input-group w-100">
+                        <asp:TextBox ID="txtTimKiemHeader" runat="server"
+                            CssClass="form-control border-0 py-2 px-3"
+                            Style="max-width: 100%;"
+                            placeholder="Tìm kiếm laptop, linh kiện..."></asp:TextBox>
+                        <asp:LinkButton ID="btnTimKiemHeader" runat="server"
+                            CssClass="btn btn-light text-danger bg-white border-0 px-3 d-flex align-items-center"
+                            OnClick="btnTimKiemHeader_Click">
+                    <i class="bi bi-search fs-5"></i>
+                        </asp:LinkButton>
+                    </div>
                 </div>
             </div>
         </nav>
@@ -160,5 +194,6 @@
     <asp:PlaceHolder runat="server">
         <%: Scripts.Render("~/Scripts/bootstrap.js") %>
     </asp:PlaceHolder>
+    <script src='<%= ResolveUrl("~/Scripts/form-helper.js") %>'></script>
 </body>
 </html>

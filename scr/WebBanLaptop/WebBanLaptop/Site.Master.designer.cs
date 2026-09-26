@@ -24,6 +24,60 @@ namespace WebBanLaptop
         protected global::System.Web.UI.WebControls.Image imgLogoHeader;
 
         /// <summary>
+        /// pnlChuaDangNhap control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel pnlChuaDangNhap;
+
+        /// <summary>
+        /// pnlDaDangNhap control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel pnlDaDangNhap;
+
+        /// <summary>
+        /// imgAvatarNav control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image imgAvatarNav;
+
+        /// <summary>
+        /// lblTenNguoiDungNav control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblTenNguoiDungNav;
+
+        /// <summary>
+        /// btnDangXuatNav control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton btnDangXuatNav;
+
+        /// <summary>
+        /// lblSoLuongGioHang control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblSoLuongGioHang;
+
+        /// <summary>
         /// txtTimKiemHeader control.
         /// </summary>
         /// <remarks>
@@ -40,15 +94,6 @@ namespace WebBanLaptop
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton btnTimKiemHeader;
-
-        /// <summary>
-        /// lblSoLuongGioHang control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblSoLuongGioHang;
 
         /// <summary>
         /// MainContent control.

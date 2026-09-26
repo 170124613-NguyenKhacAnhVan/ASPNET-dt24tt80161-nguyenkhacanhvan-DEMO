@@ -152,6 +152,7 @@
     <Content Include="Content\bootstrap-grid.min.css.map" />
     <Content Include="Content\bootstrap-grid.css.map" />
     <None Include="Scripts\jquery-3.7.0.intellisense.js" />
+    <Content Include="Scripts\form-helper.js" />
     <Content Include="Scripts\jquery-3.7.0.js" />
     <Content Include="Scripts\jquery-3.7.0.min.js" />
     <Content Include="Scripts\jquery-3.7.0.slim.js" />
@@ -179,6 +180,9 @@
     <Content Include="Scripts\WebForms\WebParts.js" />
     <Content Include="Scripts\WebForms\WebUIValidation.js" />
     <Content Include="Site.Master" />
+    <Content Include="TrangDangKy.aspx" />
+    <Content Include="TrangDangNhap.aspx" />
+    <Content Include="TrangHoSo.aspx" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
@@ -225,6 +229,27 @@
     </Compile>
     <Compile Include="Site.Mobile.Master.designer.cs">
       <DependentUpon>Site.Mobile.Master</DependentUpon>
+    </Compile>
+    <Compile Include="TrangDangKy.aspx.cs">
+      <DependentUpon>TrangDangKy.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TrangDangKy.aspx.designer.cs">
+      <DependentUpon>TrangDangKy.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TrangDangNhap.aspx.cs">
+      <DependentUpon>TrangDangNhap.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TrangDangNhap.aspx.designer.cs">
+      <DependentUpon>TrangDangNhap.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TrangHoSo.aspx.cs">
+      <DependentUpon>TrangHoSo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TrangHoSo.aspx.designer.cs">
+      <DependentUpon>TrangHoSo.aspx</DependentUpon>
     </Compile>
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>

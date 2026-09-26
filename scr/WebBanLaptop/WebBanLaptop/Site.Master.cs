@@ -11,9 +11,31 @@ namespace WebBanLaptop
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["UserID"] != null)
+            {
+                pnlChuaDangNhap.Visible = false;
+                pnlDaDangNhap.Visible = true;
 
+                lblTenNguoiDungNav.Text = Session["Fullname"] != null ? Session["Fullname"].ToString() : Session["Username"].ToString();
+
+                string avatarFile = Session["Avatar"] != null && !string.IsNullOrEmpty(Session["Avatar"].ToString())
+                                    ? Session["Avatar"].ToString()
+                                    : "default-avatar.png";
+                imgAvatarNav.ImageUrl = "~/Images/" + avatarFile;
+            }
+            else
+            {
+                pnlChuaDangNhap.Visible = true;
+                pnlDaDangNhap.Visible = false;
+            }
         }
 
+        protected void btnDangXuatNav_Click(object sender, EventArgs e)
+        {
+            Session.Clear();
+            Session.Abandon();
+            Response.Redirect("~/Default.aspx");
+        }
         protected void btnTimKiemHeader_Click(object sender, EventArgs e) 
         {
             string tuKhoa = txtTimKiemHeader.Text.Trim();

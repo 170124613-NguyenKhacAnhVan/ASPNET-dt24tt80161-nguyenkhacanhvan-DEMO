@@ -3,7 +3,6 @@
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
     <main>
-        <!-- 1. SLIDER BANNER -->
         <div id="homeCarousel" class="carousel slide mb-4" data-bs-ride="carousel">
             <div class="carousel-indicators">
                 <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -31,7 +30,6 @@
             </button>
         </div>
 
-        <!-- 2. DANH SÁCH THƯƠNG HIỆU (Lấy động từ bảng ThuongHieu) -->
         <div class="row text-center mb-4 g-2">
             <asp:Repeater ID="rptThuongHieu" runat="server">
                 <ItemTemplate>
@@ -51,7 +49,6 @@
             </asp:Repeater>
         </div>
 
-        <!-- 3. DANH MỤC SẢN PHẨM (Lấy động từ bảng DanhMuc) -->
         <div class="bg-white rounded p-3 mb-4 shadow-sm border">
             <div class="d-flex justify-content-between align-items-center border-bottom pb-2 mb-3">
                 <h5 class="fw-bold mb-0 text-uppercase text-dark">Danh Mục Sản Phẩm</h5>
@@ -77,7 +74,6 @@
             </div>
         </div>
 
-        <!-- 4. KHUYẾN MÃI HOT (Lấy từ bảng SanPham có GiaKhuyenMai < GiaGoc) -->
         <asp:Panel ID="pnlKhuyenMai" runat="server" CssClass="hot-sale-section bg-danger rounded p-3 mb-4 shadow-sm">
             <div class="d-flex justify-content-between align-items-center mb-3 px-2">
                 <h3 class="text-white fw-bold mb-0 text-uppercase">
@@ -119,7 +115,6 @@
             </div>
         </asp:Panel>
 
-        <!-- 5. HIỂN THỊ CÁC DANH MỤC VÀ SẢN PHẨM TƯƠNG ỨNG (Thay cho khối Laptop Gaming cố định) -->
         <asp:Repeater ID="rptDanhMucSanPham" runat="server" OnItemDataBound="rptDanhMucSanPham_ItemDataBound">
             <ItemTemplate>
                 <div class="bg-white rounded p-3 mb-4 shadow-sm border">
@@ -129,7 +124,6 @@
                         </a>
                     </div>
 
-                    <!-- HiddenField lưu MaDanhMuc để truyền vào Repeater con ở CodeBehind -->
                     <asp:HiddenField ID="hfMaDanhMuc" runat="server" Value='<%# Eval("MaDanhMuc") %>' />
 
                     <div class="row row-cols-2 row-cols-md-4 g-3">
