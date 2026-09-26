@@ -1,0 +1,164 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="WebBanLaptop.SiteMaster" %>
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%: Page.Title %> - My ASP.NET Application</title>
+
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>
+
+    <webopt:BundleReference runat="server" Path="~/Content/css" />
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+<body>
+    <form runat="server">
+        <asp:ScriptManager runat="server">
+            <Scripts>
+                <%--To learn more about bundling scripts in ScriptManager see https://go.microsoft.com/fwlink/?LinkID=301884 --%>
+                <%--Framework Scripts--%>
+                <asp:ScriptReference Name="MsAjaxBundle" />
+                <asp:ScriptReference Name="jquery" />
+                <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
+                <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
+                <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
+                <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
+                <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
+                <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
+                <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
+                <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
+                <asp:ScriptReference Name="WebFormsBundle" />
+                <%--Site Scripts--%>
+            </Scripts>
+        </asp:ScriptManager>
+
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-danger border-bottom box-shadow mb-3 py-2">
+            <div class="container">
+                <a class="navbar-brand me-4" href="Default.aspx">
+                    <asp:Image ID="imgLogoHeader" runat="server" ImageUrl="~/Images/LOGO DANG KHOA WHITE.png" AlternateText="Máy tính Đăng Khoa" Height="60px" />
+                </a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="navbar-collapse collapse d-sm-inline-flex align-items-center">
+                    <ul class="navbar-nav me-auto">
+                        <li class="nav-item">
+                            <a class="nav-link text-white rounded px-3 d-flex align-items-center" href="Default.aspx" style="background-color: #a30000;">
+                                <i class="bi bi-list fs-5 me-2"></i>
+                                <strong>Danh mục</strong>
+                            </a>
+                        </li>
+                    </ul>
+
+                    <div class="d-flex flex-grow-1 mx-4">
+                        <div class="input-group">
+                            <asp:TextBox ID="txtTimKiemHeader" runat="server" CssClass="form-control border-0" placeholder="Tìm kiếm laptop..."></asp:TextBox>
+                            <asp:LinkButton ID="btnTimKiemHeader" runat="server" CssClass="btn btn-light text-danger bg-white border-0" OnClick="btnTimKiemHeader_Click">
+                        <i class="bi bi-search"></i>
+                    </asp:LinkButton>
+                        </div>
+                    </div>
+
+                    <ul class="navbar-nav ms-auto align-items-center gap-3">
+                        <li class="nav-item me-3">
+                            <a class="nav-link text-white position-relative" href="GioHang.aspx">
+                                <i class="bi bi-cart3 fs-3"></i>
+                                <span class="position-absolute top-10 start-100 translate-middle badge rounded-pill bg-warning text-dark">
+                                    <asp:Label ID="lblSoLuongGioHang" runat="server" Text="0"></asp:Label>
+                                </span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="Login.aspx" title="Đăng nhập / Quản trị">
+                                <i class="bi bi-person-circle fs-3"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="container body-content">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server"></asp:ContentPlaceHolder>
+            <hr />
+        </div>
+        <footer class="bg-dark text-white pt-5 pb-3 mt-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 mb-4 pe-lg-5">
+                        <asp:Image ID="imgLogoFooter" runat="server" ImageUrl="~/Images/LOGO DANG KHOA.png" AlternateText="Máy tính Đăng Khoa" Height="100px" CssClass="mb-3" />
+                        <p class="text-white-50 mb-2">
+                            <i class="bi bi-geo-alt-fill me-2"></i>39 Trần Khát Chân, Thôn Thiện Trung, Phường Mũi Né, Tỉnh Lâm Đồng
+   
+                        </p>
+                        <p class="text-white-50 mb-2">
+                            <i class="bi bi-telephone-fill me-2"></i>Hotline: 0944.484.818
+   
+                        </p>
+                        <p class="text-white-50 mb-2">
+                            <i class="bi bi-envelope-fill me-2"></i>Email: hotro@dangkhoa.com
+   
+                        </p>
+                    </div>
+
+                    <div class="col-lg-2 col-md-6 mb-4">
+                        <h5 class="text-uppercase fw-bold mb-3">Về chúng tôi</h5>
+                        <ul class="list-unstyled">
+                            <li class="mb-2"><a href="About.aspx" class="text-white-50 text-decoration-none custom-link">Giới thiệu công ty</a></li>
+                            <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none custom-link">Tuyển dụng</a></li>
+                            <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none custom-link">Tin tức công nghệ</a></li>
+                            <li class="mb-2"><a href="Contact.aspx" class="text-white-50 text-decoration-none custom-link">Liên hệ</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 mb-4">
+                        <h5 class="text-uppercase fw-bold mb-3">Chính sách</h5>
+                        <ul class="list-unstyled">
+                            <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none custom-link">Hướng dẫn mua hàng</a></li>
+                            <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none custom-link">Chính sách bảo hành</a></li>
+                            <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none custom-link">Chính sách kiểm hàng</a></li>
+                            <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none custom-link">Chính sách đổi trả</a></li>
+                            <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none custom-link">Giao hàng & Lắp đặt</a></li>
+                            <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none custom-link">Chính sách bảo mật</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 mb-4">
+                        <h5 class="text-uppercase fw-bold mb-3">Kết nối với chúng tôi</h5>
+                        <div class="d-flex gap-3 mb-4">
+                            <a href="#" class="text-white fs-4"><i class="bi bi-facebook"></i></a>
+                            <a href="#" class="text-white fs-4"><i class="bi bi-youtube"></i></a>
+                            <a href="#" class="text-white fs-4"><i class="bi bi-tiktok"></i></a>
+                        </div>
+                        <h5 class="text-uppercase fw-bold mb-3">Thanh toán</h5>
+                        <div class="d-flex gap-3 text-white-50">
+                            <i class="bi bi-cash-coin fs-2"></i>
+                            <i class="bi bi-credit-card fs-2"></i>
+                            <i class="bi bi-paypal fs-2"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <hr class="border-secondary mb-4" />
+
+                <div class="row align-items-center">
+                    <div class="col-md-12 text-center text-white-50">
+                        <p class="mb-0">&copy; <%: DateTime.Now.Year %> - Bản quyền thuộc về Camera Máy tính Đăng Khoa.</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </form>
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/Scripts/bootstrap.js") %>
+    </asp:PlaceHolder>
+</body>
+</html>

@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.37614.0 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebBanLaptop", "WebBanLaptop\WebBanLaptop.csproj", "{6A633983-E9C7-4930-B2A7-EC5734A2AD27}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6A633983-E9C7-4930-B2A7-EC5734A2AD27}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A633983-E9C7-4930-B2A7-EC5734A2AD27}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A633983-E9C7-4930-B2A7-EC5734A2AD27}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A633983-E9C7-4930-B2A7-EC5734A2AD27}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {487EA229-344F-4B20-AC1F-00A5F9CF7335}
+	EndGlobalSection
+EndGlobal
