@@ -12,7 +12,6 @@
                 <p class="text-secondary small mb-0">Theo dõi hoạt động kinh doanh hệ thống Máy tính Đăng Khoa</p>
             </div>
 
-            <!-- Control cơ bản: DropDownList có AutoPostBack để lọc theo năm -->
             <div class="d-flex align-items-center gap-2">
                 <label class="small fw-semibold text-secondary text-nowrap">Năm thống kê:</label>
                 <asp:DropDownList ID="ddlNamThongKe" runat="server" AutoPostBack="true"
@@ -25,33 +24,7 @@
             </div>
         </div>
 
-        <!-- ================= 2. MENU ĐIỀU HƯỚNG NHANH CHO ADMIN ================= -->
-        <div class="row g-2 mb-4">
-            <div class="col-6 col-md-3">
-                <a href="QuanLySanPham.aspx" class="btn btn-outline-danger w-100 py-2 fw-semibold rounded-3 shadow-sm bg-white text-danger">
-                    <i class="bi bi-laptop me-1"></i>Quản lý Laptop
-                </a>
-            </div>
-            <div class="col-6 col-md-3">
-                <a href="QuanLyDanhMuc.aspx" class="btn btn-outline-danger w-100 py-2 fw-semibold rounded-3 shadow-sm bg-white text-danger">
-                    <i class="bi bi-tags me-1"></i>Quản lý Danh mục
-                </a>
-            </div>
-            <div class="col-6 col-md-3">
-                <a href="QuanLyDonHang.aspx" class="btn btn-outline-danger w-100 py-2 fw-semibold rounded-3 shadow-sm bg-white text-danger">
-                    <i class="bi bi-receipt me-1"></i>Quản lý Đơn hàng
-                </a>
-            </div>
-            <div class="col-6 col-md-3">
-                <a href="QuanLyNguoiDung.aspx" class="btn btn-outline-danger w-100 py-2 fw-semibold rounded-3 shadow-sm bg-white text-danger">
-                    <i class="bi bi-people me-1"></i>Quản lý Khách hàng
-                </a>
-            </div>
-        </div>
-
-        <!-- ================= 3. BỐN THẺ THỐNG KÊ TỔNG QUAN (KPI CARDS) ================= -->
         <div class="row g-3 mb-4">
-            <!-- Tổng doanh thu -->
             <div class="col-12 col-sm-6 col-xl-3">
                 <div class="card border-0 shadow-sm rounded-4 h-100">
                     <div class="card-body p-4 d-flex align-items-center justify-content-between">
@@ -69,7 +42,6 @@
                 </div>
             </div>
 
-            <!-- Tổng đơn hàng -->
             <div class="col-12 col-sm-6 col-xl-3">
                 <div class="card border-0 shadow-sm rounded-4 h-100">
                     <div class="card-body p-4 d-flex align-items-center justify-content-between">
@@ -105,7 +77,6 @@
                 </div>
             </div>
 
-            <!-- Tổng khách hàng (Lấy trực tiếp từ tblUser) -->
             <div class="col-12 col-sm-6 col-xl-3">
                 <div class="card border-0 shadow-sm rounded-4 h-100">
                     <div class="card-body p-4 d-flex align-items-center justify-content-between">
@@ -124,9 +95,7 @@
             </div>
         </div>
 
-        <!-- ================= 4. KHU VỰC BIỂU ĐỒ (CHART.JS + BOOTSTRAP) ================= -->
         <div class="row g-4 mb-4">
-            <!-- Biểu đồ cột: Doanh thu 12 tháng -->
             <div class="col-lg-8">
                 <div class="card border-0 shadow-sm rounded-4 h-100">
                     <div class="card-header bg-white border-bottom p-4 d-flex justify-content-between align-items-center">
@@ -140,7 +109,6 @@
                 </div>
             </div>
 
-            <!-- Biểu đồ tròn: Tỷ lệ trạng thái đơn hàng -->
             <div class="col-lg-4">
                 <div class="card border-0 shadow-sm rounded-4 h-100">
                     <div class="card-header bg-white border-bottom p-4">

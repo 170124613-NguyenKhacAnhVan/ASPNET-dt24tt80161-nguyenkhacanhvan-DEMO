@@ -42,7 +42,6 @@ namespace WebBanLaptop.Admin
             {
                 conn.Open();
 
-                // Đếm số lượng khách hàng thực tế từ bảng tblUser
                 string sqlUser = "SELECT COUNT(*) FROM tblUser WHERE Role = 0";
                 SqlCommand cmdUser = new SqlCommand(sqlUser, conn);
                 int tongKhach = (int)cmdUser.ExecuteScalar();
