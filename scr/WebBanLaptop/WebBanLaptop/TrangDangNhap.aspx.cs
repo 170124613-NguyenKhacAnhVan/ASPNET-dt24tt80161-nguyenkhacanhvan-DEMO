@@ -75,7 +75,7 @@ namespace WebBanLaptop
                     Session["Avatar"] = reader["Avatar"] != DBNull.Value && !string.IsNullOrEmpty(reader["Avatar"].ToString()) ? reader["Avatar"].ToString() : "default-avatar.png";
 
                     if (Convert.ToInt32(Session["Role"]) == 1)
-                        Response.Redirect("~/Admin/Default.aspx");
+                        Response.Redirect("~/Admin/TrangQuanTri.aspx");
                     else
                         Response.Redirect("Default.aspx");
                 }

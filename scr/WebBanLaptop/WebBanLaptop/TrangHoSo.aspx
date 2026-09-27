@@ -45,7 +45,7 @@
                             <a href="DonHangCuaToi.aspx" class="list-group-item list-group-item-action rounded-3 mb-1 py-2">
                                 <i class="bi bi-receipt-cutoff me-2 text-danger"></i>Đơn hàng của tôi
                             </a>
-                            <asp:HyperLink ID="lnkQuanTriAdmin" runat="server" NavigateUrl="~/Admin/Default.aspx" Visible="false"
+                            <asp:HyperLink ID="lnkQuanTriAdmin" runat="server" NavigateUrl="~/Admin/TrangQuanTri" Visible="false"
                                 CssClass="list-group-item list-group-item-action rounded-3 py-2 fw-bold text-primary">
                                 <i class="bi bi-speedometer2 me-2"></i> Truy cập trang Quản trị
                             </asp:HyperLink>

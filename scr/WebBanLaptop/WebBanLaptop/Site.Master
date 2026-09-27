@@ -63,7 +63,7 @@
 
                     <!-- TRẠNG THÁI 2: ĐÃ ĐĂNG NHẬP -->
                     <asp:Panel ID="pnlDaDangNhap" runat="server" Visible="false" CssClass="d-flex align-items-center gap-2">
-                        <a class="nav-link text-white d-flex align-items-center gap-2 p-1 text-nowrap" href="TrangHoSo.aspx" title="Xem hồ sơ cá nhân">
+                        <a class="nav-link text-white d-flex align-items-center gap-2 p-1 text-nowrap" href="../TrangHoSo" title="Xem hồ sơ cá nhân">
                             <asp:Image ID="imgAvatarNav" runat="server"
                                 ImageUrl="~/Images/default-avatar.png"
                                 CssClass="rounded-circle border border-2 border-warning object-fit-cover bg-white"

@@ -1,0 +1,183 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Admin.master.cs" Inherits="WebBanLaptop.Admin.Admin" %>
+
+<!DOCTYPE html>
+<html lang="vi">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%: Page.Title %> - Quản trị Đăng Khoa</title>
+
+    <!-- Bootstrap 5 & Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+
+    <style>
+        body {
+            background-color: #f4f6f9;
+            overflow-x: hidden;
+        }
+        /* Thanh Sidebar bên trái */
+        .admin-sidebar {
+            width: 260px;
+            min-height: 100vh;
+            background: #1e2125;
+            transition: all 0.3s;
+        }
+        .admin-sidebar .nav-link {
+            color: #adb5bd;
+            padding: 11px 16px;
+            border-radius: 8px;
+            margin-bottom: 4px;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            transition: all 0.2s;
+        }
+        .admin-sidebar .nav-link:hover {
+            color: #fff;
+            background-color: rgba(255, 255, 255, 0.08);
+        }
+        .admin-sidebar .nav-link.active {
+            color: #fff;
+            background-color: #dc3545;
+            box-shadow: 0 4px 10px rgba(220, 53, 69, 0.35);
+        }
+        .admin-sidebar .nav-link i {
+            font-size: 1.15rem;
+        }
+        /* Mở khóa max-width mặc định của WebForms */
+        input, select, textarea {
+            max-width: 100%;
+        }
+    </style>
+
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="d-flex">
+            
+            <aside class="admin-sidebar offcanvas-lg offcanvas-start sticky-lg-top vh-100 overflow-y-auto text-white d-flex flex-column flex-shrink-0 p-3" tabindex="-1" id="adminSidebar">
+                
+                <!-- Logo Admin -->
+                <div class="d-flex align-items-center justify-content-between pb-3 mb-3 border-bottom border-secondary border-opacity-50">
+                    <a href="TrangQuanTri.aspx" class="text-white text-decoration-none d-flex align-items-center gap-2">
+                        <span class="bg-danger rounded-3 p-2 d-inline-flex align-items-center justify-content-center">
+                            <i class="bi bi-laptop fs-5 text-white"></i>
+                        </span>
+                        <div class="lh-1">
+                            <span class="fw-bold d-block">ĐĂNG KHOA</span>
+                            <small class="text-warning" style="font-size: 0.7rem; letter-spacing: 1px;">ADMIN PANEL</small>
+                        </div>
+                    </a>
+                    <button type="button" class="btn-close btn-close-white d-lg-none" data-bs-dismiss="offcanvas" data-bs-target="#adminSidebar"></button>
+                </div>
+
+                <!-- Danh sách Menu quản lý -->
+                <div class="text-uppercase text-secondary fw-bold px-2 mb-2" style="font-size: 0.7rem; letter-spacing: 0.8px;">
+                    Menu Quản Lý
+                </div>
+                <ul class="nav nav-pills flex-column mb-auto">
+                    <li class="nav-item">
+                        <a href="TrangQuanTri.aspx" class="nav-link">
+                            <i class="bi bi-speedometer2"></i> Tổng quan (Dashboard)
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="QuanLyDanhMuc.aspx" class="nav-link">
+                            <i class="bi bi-tags"></i> Quản lý Danh mục
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="QuanLySanPham.aspx" class="nav-link">
+                            <i class="bi bi-pc-display"></i> Quản lý Laptop
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="QuanLyDonHang.aspx" class="nav-link">
+                            <i class="bi bi-receipt-cutoff"></i> Quản lý Đơn hàng
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="QuanLyNguoiDung.aspx" class="nav-link">
+                            <i class="bi bi-people"></i> Quản lý Tài khoản
+                        </a>
+                    </li>
+                </ul>
+
+                <!-- Chân Sidebar: Về trang bán hàng & Đăng xuất -->
+                <div class="pt-3 mt-3 border-top border-secondary border-opacity-50">
+                    <a runat="server" href="~/Default.aspx" class="nav-link text-warning mb-2">
+                        <i class="bi bi-shop"></i> Xem trang bán hàng
+                    </a>
+                    <asp:LinkButton ID="btnDangXuatAdmin" runat="server" 
+                        CssClass="btn btn-outline-danger w-100 py-2 fw-semibold rounded-3 d-flex align-items-center justify-content-center gap-2" 
+                        CausesValidation="false"
+                        OnClick="btnDangXuatAdmin_Click">
+                        <i class="bi bi-box-arrow-right"></i> Đăng xuất
+                    </asp:LinkButton>
+                </div>
+            </aside>
+
+            <!-- ================= 2. KHUNG NỘI DUNG BÊN PHẢI ================= -->
+            <div class="flex-grow-1 d-flex flex-column min-vh-100" style="min-width: 0;">
+                
+                <!-- Thanh Topbar nhỏ gọn phía trên -->
+                <header class="bg-white border-bottom shadow-sm py-2 px-4 d-flex align-items-center justify-content-between sticky-top">
+                    <div class="d-flex align-items-center gap-3">
+                        <!-- Nút mở Sidebar trên màn hình điện thoại -->
+                        <button class="btn btn-outline-secondary d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#adminSidebar">
+                            <i class="bi bi-list fs-5"></i>
+                        </button>
+                        <h6 class="mb-0 fw-bold text-secondary d-none d-sm-block">
+                            Hệ thống Quản trị Máy tính Đăng Khoa
+                        </h6>
+                    </div>
+
+                    <!-- Thông tin Admin đang đăng nhập -->
+                    <div class="d-flex align-items-center gap-3">
+                        <a runat="server" href="~/TrangHoSo.aspx" class="text-decoration-none d-flex align-items-center gap-2 text-dark">
+                            <asp:Image ID="imgAdminAvatar" runat="server" 
+                                ImageUrl="~/Images/default-avatar.png" 
+                                CssClass="rounded-circle border border-2 border-danger object-fit-cover" 
+                                Style="width: 38px; height: 38px;" />
+                            <div class="lh-sm text-start d-none d-sm-block">
+                                <span class="fw-bold small d-block">
+                                    <asp:Label ID="lblAdminName" runat="server" Text="Admin"></asp:Label>
+                                </span>
+                                <small class="text-danger fw-semibold" style="font-size: 0.72rem;">Quản trị viên</small>
+                            </div>
+                        </a>
+                    </div>
+                </header>
+
+                <!-- Nội dung chính của từng trang Admin sẽ đổ vào đây -->
+                <main class="p-3 p-md-4 flex-grow-1">
+                    <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                    </asp:ContentPlaceHolder>
+                </main>
+
+            </div>
+        </div>
+    </form>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src='<%= ResolveUrl("~/Scripts/form-helper.js") %>'></script>
+
+    <!-- Script tự động tô đỏ (active) mục Menu bên trái ứng với trang đang mở -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var currentUrl = window.location.pathname.toLowerCase();
+            var navLinks = document.querySelectorAll(".admin-sidebar .nav-pills .nav-link");
+            navLinks.forEach(function (link) {
+                var href = link.getAttribute("href").toLowerCase().replace(".aspx", "");
+                if (currentUrl.indexOf(href) !== -1) {
+                    link.classList.add("active");
+                }
+            });
+        });
+    </script>
+</body>
+</html>
