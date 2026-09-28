@@ -340,7 +340,7 @@ namespace WebBanLaptop.Admin
 
                         string anh = reader["AnhDaiDien"] != DBNull.Value ? reader["AnhDaiDien"].ToString() : "no-image.png";
                         hfAnhDaiDienCu.Value = anh;
-                        imgPreview.ImageUrl = "~/Images/" + anh;
+                        imgPreview.ImageUrl = string.IsNullOrEmpty(anh) ? "" : anh;
 
                         txtCPU.Text = reader["CPU"].ToString();
                         txtRAM.Text = reader["RAM"].ToString();

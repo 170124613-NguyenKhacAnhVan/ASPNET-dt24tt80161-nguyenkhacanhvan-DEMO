@@ -203,7 +203,7 @@
                                     <asp:Repeater ID="rptAlbumAnh" runat="server" OnItemCommand="rptAlbumAnh_ItemCommand">
                                         <ItemTemplate>
                                             <div class="position-relative border rounded-3 bg-white p-1" style="width: 80px; height: 70px;">
-                                                <img src='<%# ResolveUrl("~/Images/" + Eval("DuongDanAnh")) %>' class="w-100 h-100 object-fit-contain" />
+                                                <img src='<%# Eval("DuongDanAnh") %>' class="w-100 h-100 object-fit-contain" />
                                                 <asp:LinkButton ID="btnXoaAnhPhu" runat="server"
                                                     CommandName="XoaAnh" CommandArgument='<%# Eval("MaHinhAnh") %>'
                                                     CausesValidation="false"
@@ -279,7 +279,7 @@
 
                         <asp:TemplateField HeaderText="Ảnh" HeaderStyle-CssClass="py-3">
                             <ItemTemplate>
-                                <img src='<%# ResolveUrl("~/Images/" + Eval("AnhDaiDien")) %>' alt="Laptop"
+                                <img src='<%# Eval("AnhDaiDien") %>' alt="Laptop"
                                     class="rounded-3 border bg-white p-1 object-fit-contain" style="width: 65px; height: 50px;" />
                             </ItemTemplate>
                         </asp:TemplateField>
