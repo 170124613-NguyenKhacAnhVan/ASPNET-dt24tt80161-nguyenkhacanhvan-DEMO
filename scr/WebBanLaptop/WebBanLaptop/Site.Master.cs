@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -27,6 +28,29 @@ namespace WebBanLaptop
             {
                 pnlChuaDangNhap.Visible = true;
                 pnlDaDangNhap.Visible = false;
+            }
+        }
+
+        protected void Page_PreRender(object sender, EventArgs e)
+        {
+            CapNhatSoLuongGioHang();
+        }
+
+        public void CapNhatSoLuongGioHang()
+        {
+            if (Session["GioHang"] != null)
+            {
+                DataTable dt = (DataTable)Session["GioHang"];
+                int tongSoLuong = 0;
+                foreach (DataRow row in dt.Rows)
+                {
+                    tongSoLuong += Convert.ToInt32(row["SoLuong"]);
+                }
+                lblSoLuongGioHang.Text = tongSoLuong.ToString();
+            }
+            else
+            {
+                lblSoLuongGioHang.Text = "0";
             }
         }
 
