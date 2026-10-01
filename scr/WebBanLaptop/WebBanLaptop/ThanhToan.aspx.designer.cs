@@ -15,6 +15,15 @@ namespace WebBanLaptop
     {
 
         /// <summary>
+        /// pnlThanhCong control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel pnlThanhCong;
+
+        /// <summary>
         /// pnlFormDatHang control.
         /// </summary>
         /// <remarks>
@@ -60,6 +69,15 @@ namespace WebBanLaptop
         protected global::System.Web.UI.WebControls.DropDownList ddlPhuongThuc;
 
         /// <summary>
+        /// rptDonHang control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater rptDonHang;
+
+        /// <summary>
         /// lblTongThanhToan control.
         /// </summary>
         /// <remarks>
@@ -76,14 +94,5 @@ namespace WebBanLaptop
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnDatHang;
-
-        /// <summary>
-        /// pnlThanhCong control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel pnlThanhCong;
     }
 }

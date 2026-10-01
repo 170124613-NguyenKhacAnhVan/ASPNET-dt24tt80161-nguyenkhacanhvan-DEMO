@@ -196,110 +196,75 @@ namespace WebBanLaptop
             lblThongBao.Visible = true;
         }
 
-        // 5. Sự kiện nút MUA NGAY (Thêm vào giỏ và chuyển sang trang GioHang.aspx)
+        // 5. Sự kiện nút MUA NGAY 
         protected void btnMuaNgay_Click(object sender, EventArgs e)
         {
             ThemSanPhamVaoGio();
             Response.Redirect("GioHang.aspx");
         }
 
-        // Hàm xử lý lưu vào tblGioHang / tblChiTietGioHang (nếu đã đăng nhập) hoặc Session (nếu chưa đăng nhập)
         private void ThemSanPhamVaoGio()
         {
+            // 1. Lấy thông tin mã sản phẩm và số lượng
             int maSanPham = Convert.ToInt32(Request.QueryString["id"]);
             int soLuongMua = 1;
-            int.TryParse(txtSoLuong.Text, out soLuongMua);
+
+            // Nếu có ô nhập số lượng thì lấy, không thì mặc định là 1
+            if (txtSoLuong != null)
+            {
+                int.TryParse(txtSoLuong.Text, out soLuongMua);
+            }
             if (soLuongMua <= 0) soLuongMua = 1;
 
-            // Trường hợp 1: Người dùng đã đăng nhập (có Session["UserID"]) -> Lưu vào Database
-            if (Session["UserID"] != null)
+            // 2. LUÔN DÙNG SESSION ĐỂ LƯU GIỎ HÀNG (Dù đã đăng nhập hay chưa)
+            DataTable dtGioHang = Session["GioHang"] as DataTable;
+
+            if (dtGioHang == null)
             {
-                int userId = Convert.ToInt32(Session["UserID"]);
-                using (SqlConnection conn = new SqlConnection(connStr))
-                {
-                    conn.Open();
+                dtGioHang = new DataTable();
+                dtGioHang.Columns.Add("MaSanPham", typeof(int));
+                dtGioHang.Columns.Add("TenSanPham", typeof(string));
+                dtGioHang.Columns.Add("AnhDaiDien", typeof(string));
+                dtGioHang.Columns.Add("DonGia", typeof(decimal));
+                dtGioHang.Columns.Add("SoLuong", typeof(int));
+                dtGioHang.Columns.Add("ThanhTien", typeof(decimal), "DonGia * SoLuong"); 
+            }
 
-                    // Kiểm tra hoặc tạo mới MaGioHang cho UserID
-                    string sqlGetCart = @"
-                IF NOT EXISTS (SELECT 1 FROM tblGioHang WHERE UserID = @UserID)
-                    INSERT INTO tblGioHang (UserID) VALUES (@UserID);
-                SELECT MaGioHang FROM tblGioHang WHERE UserID = @UserID;";
-
-                    int maGioHang;
-                    using (SqlCommand cmdCart = new SqlCommand(sqlGetCart, conn))
-                    {
-                        cmdCart.Parameters.AddWithValue("@UserID", userId);
-                        maGioHang = Convert.ToInt32(cmdCart.ExecuteScalar());
-                    }
-
-                    // Kiểm tra sản phẩm đã có trong tblChiTietGioHang chưa
-                    string sqlUpsertItem = @"
-                IF EXISTS (SELECT 1 FROM tblChiTietGioHang WHERE MaGioHang = @MaGioHang AND MaSanPham = @MaSanPham)
-                    UPDATE tblChiTietGioHang SET SoLuong = SoLuong + @SoLuong WHERE MaGioHang = @MaGioHang AND MaSanPham = @MaSanPham
-                ELSE
-                    INSERT INTO tblChiTietGioHang (MaGioHang, MaSanPham, SoLuong) VALUES (@MaGioHang, @MaSanPham, @SoLuong)";
-
-                    using (SqlCommand cmdItem = new SqlCommand(sqlUpsertItem, conn))
-                    {
-                        cmdItem.Parameters.AddWithValue("@MaGioHang", maGioHang);
-                        cmdItem.Parameters.AddWithValue("@MaSanPham", maSanPham);
-                        cmdItem.Parameters.AddWithValue("@SoLuong", soLuongMua);
-                        cmdItem.ExecuteNonQuery();
-                    }
-                }
+            // 3. Kiểm tra sản phẩm đã có trong giỏ chưa
+            DataRow[] rows = dtGioHang.Select("MaSanPham = " + maSanPham);
+            if (rows.Length > 0)
+            {
+                rows[0]["SoLuong"] = Convert.ToInt32(rows[0]["SoLuong"]) + soLuongMua;
             }
             else
             {
-                // Trường hợp 2: Khách chưa đăng nhập -> Lưu tạm vào Session["GioHang"]
-                DataTable dtGioHang = Session["GioHang"] as DataTable;
-
-                // 1. Tạo cấu trúc bảng chuẩn 6 cột (Khớp 100% với file GioHang.aspx)
-                if (dtGioHang == null)
+                string connStr = ConfigurationManager.ConnectionStrings["MyDbConn"].ConnectionString;
+                using (SqlConnection conn = new SqlConnection(connStr))
                 {
-                    dtGioHang = new DataTable();
-                    dtGioHang.Columns.Add("MaSanPham", typeof(int));
-                    dtGioHang.Columns.Add("TenSanPham", typeof(string));
-                    dtGioHang.Columns.Add("AnhDaiDien", typeof(string));
-                    dtGioHang.Columns.Add("DonGia", typeof(decimal));
-                    dtGioHang.Columns.Add("SoLuong", typeof(int));
-                    dtGioHang.Columns.Add("ThanhTien", typeof(decimal), "DonGia * SoLuong"); // Tự động tính
-                }
-
-                DataRow[] rows = dtGioHang.Select("MaSanPham = " + maSanPham);
-                if (rows.Length > 0)
-                {
-                    // Đã có trong giỏ -> Cộng dồn số lượng
-                    rows[0]["SoLuong"] = Convert.ToInt32(rows[0]["SoLuong"]) + soLuongMua;
-                }
-                else
-                {
-                    // 2. Chưa có trong giỏ -> Lấy thông tin từ Database để đưa vào Session
-                    using (SqlConnection conn = new SqlConnection(connStr))
+                    string sqlGetProduct = "SELECT TenSanPham, AnhDaiDien, GiaGoc FROM tblSanPham WHERE MaSanPham = @MaSanPham";
+                    using (SqlCommand cmd = new SqlCommand(sqlGetProduct, conn))
                     {
-                        // Lấy Giá Gốc (nếu bạn muốn ưu tiên giá khuyến mãi thì viết lại câu SQL chỗ này)
-                        string sqlGetProduct = "SELECT TenSanPham, AnhDaiDien, GiaGoc FROM tblSanPham WHERE MaSanPham = @MaSanPham";
-                        using (SqlCommand cmd = new SqlCommand(sqlGetProduct, conn))
+                        cmd.Parameters.AddWithValue("@MaSanPham", maSanPham);
+                        conn.Open();
+                        using (SqlDataReader reader = cmd.ExecuteReader())
                         {
-                            cmd.Parameters.AddWithValue("@MaSanPham", maSanPham);
-                            conn.Open();
-                            using (SqlDataReader reader = cmd.ExecuteReader())
+                            if (reader.Read())
                             {
-                                if (reader.Read())
-                                {
-                                    string tenSP = reader["TenSanPham"].ToString();
-                                    string anh = reader["AnhDaiDien"].ToString();
-                                    decimal gia = Convert.ToDecimal(reader["GiaGoc"]);
+                                string tenSP = reader["TenSanPham"].ToString();
+                                string anh = reader["AnhDaiDien"].ToString();
 
-                                    // Thêm vào DataTable
-                                    dtGioHang.Rows.Add(maSanPham, tenSP, anh, gia, soLuongMua);
-                                }
+                                decimal gia = Convert.ToDecimal(reader["GiaGoc"]);
+
+                                dtGioHang.Rows.Add(maSanPham, tenSP, anh, gia, soLuongMua);
                             }
                         }
                     }
                 }
-
-                Session["GioHang"] = dtGioHang;
             }
+
+            // 4. Cập nhật lại Session
+            Session["GioHang"] = dtGioHang;
+
         }
 
         private string GetSafeString(object value)
