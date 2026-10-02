@@ -101,7 +101,9 @@
   <ItemGroup>
     <Content Include="About.aspx" />
     <Content Include="Admin\QuanLyDanhMuc.aspx" />
+    <Content Include="Admin\QuanLyDonHang.aspx" />
     <Content Include="Admin\QuanLySanPham.aspx" />
+    <Content Include="Admin\QuanLyTaiKhoan.aspx" />
     <Content Include="Admin\QuanLyThuongHieu.aspx" />
     <Content Include="Admin\TrangQuanTri.aspx" />
     <Content Include="ChiTietSanPham.aspx" />
@@ -212,12 +214,26 @@
     <Compile Include="Admin\QuanLyDanhMuc.aspx.designer.cs">
       <DependentUpon>QuanLyDanhMuc.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin\QuanLyDonHang.aspx.cs">
+      <DependentUpon>QuanLyDonHang.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\QuanLyDonHang.aspx.designer.cs">
+      <DependentUpon>QuanLyDonHang.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\QuanLySanPham.aspx.cs">
       <DependentUpon>QuanLySanPham.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Admin\QuanLySanPham.aspx.designer.cs">
       <DependentUpon>QuanLySanPham.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\QuanLyTaiKhoan.aspx.cs">
+      <DependentUpon>QuanLyTaiKhoan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\QuanLyTaiKhoan.aspx.designer.cs">
+      <DependentUpon>QuanLyTaiKhoan.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\QuanLyThuongHieu.aspx.cs">
       <DependentUpon>QuanLyThuongHieu.aspx</DependentUpon>
