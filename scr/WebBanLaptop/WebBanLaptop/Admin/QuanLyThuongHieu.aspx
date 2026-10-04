@@ -112,7 +112,7 @@
 
                         <asp:TemplateField HeaderText="Hình ảnh" HeaderStyle-CssClass="py-3">
                             <ItemTemplate>
-                                <img src='<%# Eval("Logo", "~/Images/{0}") %>' onerror="this.src='/Images/no-image.png'" alt="Img"
+                                <img src='<%# Eval("Logo", "/Images/Thuonghieu/{0}") %>' onerror="this.src='/Images/no-image.png'" alt="Img"
                                     class="rounded-3 border bg-white p-1 object-fit-contain" style="width: 60px; height: 60px;" />
                             </ItemTemplate>
                         </asp:TemplateField>

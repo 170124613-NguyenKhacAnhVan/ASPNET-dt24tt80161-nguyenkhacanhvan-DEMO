@@ -74,7 +74,8 @@ namespace WebBanLaptop
                         litTenSanPham.Text = tenSP;
                         litThuongHieu.Text = reader["TenThuongHieu"].ToString();
                         litDanhMuc.Text = reader["TenDanhMuc"].ToString();
-                        imgAnhChinh.ImageUrl = reader["AnhDaiDien"].ToString();
+                        string anhDaiDien = reader["AnhDaiDien"].ToString();
+                        imgAnhChinh.ImageUrl = string.IsNullOrEmpty(anhDaiDien) ? "~/Images/no-image.png" : "~/Images/Sanpham/" + anhDaiDien;
                         litMoTa.Text = reader["MoTa"] != DBNull.Value ? reader["MoTa"].ToString() : "Đang cập nhật mô tả.";
 
                         // Xử lý hiển thị Giá & Khuyến mãi

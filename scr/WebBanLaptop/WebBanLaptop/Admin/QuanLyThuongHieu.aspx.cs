@@ -100,7 +100,7 @@ namespace WebBanLaptop.Admin
                 if (ext == ".jpg" || ext == ".jpeg" || ext == ".png" || ext == ".webp")
                 {
                     Logo = "dm_" + DateTime.Now.Ticks + ext;
-                    fuLogo.SaveAs(Server.MapPath("~/Images/" + Logo));
+                    fuLogo.SaveAs(Server.MapPath("~/Images/Thuonghieu/" + Logo));
                 }
             }
 
@@ -160,7 +160,7 @@ namespace WebBanLaptop.Admin
 
                         string anh = reader["Logo"].ToString();
                         hfLogoCu.Value = anh;
-                        imgPreview.ImageUrl = string.IsNullOrEmpty(anh) ? "~/Images/no-image.png" : "~/Images/" + anh;
+                        imgPreview.ImageUrl = string.IsNullOrEmpty(anh) ? "~/Images/no-image.png" : "~/Images/Thuonghieu/" + anh;
                     }
                 }
                 lblTieuDeForm.Text = "CẬP NHẬT DANH MỤC (#" + id + ")";

@@ -132,6 +132,8 @@
     <Content Include="Images\LOGO DANG KHOA WHITE.png" />
     <Content Include="Images\LOGO DANG KHOA.png" />
     <Content Include="Images\no-image.png" />
+    <Content Include="Images\Thuonghieu\AsusTek-black-logo.png" />
+    <Content Include="Images\Thuonghieu\HP_logo_2012.svg" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.esm.js" />
@@ -161,6 +163,10 @@
     <Content Include="Content\bootstrap-grid.min.css.map" />
     <Content Include="Content\bootstrap-grid.css.map" />
     <Content Include="Admin\Admin.Master" />
+    <Content Include="Images\Thuonghieu\Acer_2011.svg.webp" />
+    <Content Include="Images\Thuonghieu\Dell_logo.svg.webp" />
+    <Content Include="Images\Thuonghieu\Lenovo_logo_2015.svg.webp" />
+    <Content Include="Images\Thuonghieu\MacBook_Pro.svg.webp" />
     <None Include="Scripts\jquery-3.7.0.intellisense.js" />
     <Content Include="Scripts\form-helper.js" />
     <Content Include="Scripts\jquery-3.7.0.js" />
@@ -342,6 +348,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Images\Avatar\" />
+    <Folder Include="Images\Danhmuc\" />
+    <Folder Include="Images\Sanpham\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

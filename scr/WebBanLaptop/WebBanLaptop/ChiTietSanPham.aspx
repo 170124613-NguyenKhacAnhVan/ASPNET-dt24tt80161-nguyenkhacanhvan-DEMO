@@ -60,7 +60,7 @@
                     <div class="d-flex justify-content-center flex-wrap gap-2">
                         <asp:Repeater ID="rptHinhAnh" runat="server">
                             <ItemTemplate>
-                                <img src='<%# Eval("DuongDanAnh") %>'
+                                <img src='<%# Eval("DuongDanAnh", "Images/Sanpham/{0}") %>'
                                     alt="Ảnh chi tiết"
                                     class="border rounded p-1 bg-white thumb-img"
                                     onclick="changeMainImage(this.src)" />

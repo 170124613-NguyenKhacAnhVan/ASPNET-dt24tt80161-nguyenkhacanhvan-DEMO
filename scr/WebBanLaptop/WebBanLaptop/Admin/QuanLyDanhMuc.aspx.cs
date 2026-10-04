@@ -100,7 +100,7 @@ namespace WebBanLaptop.Admin
                 if (ext == ".jpg" || ext == ".jpeg" || ext == ".png" || ext == ".webp")
                 {
                     hinhAnh = "dm_" + DateTime.Now.Ticks + ext;
-                    fuHinhAnh.SaveAs(Server.MapPath("~/Images/" + hinhAnh));
+                    fuHinhAnh.SaveAs(Server.MapPath("~/Images/Danhmuc/" + hinhAnh));
                 }
             }
 
@@ -160,7 +160,7 @@ namespace WebBanLaptop.Admin
 
                         string anh = reader["HinhAnh"].ToString();
                         hfHinhAnhCu.Value = anh;
-                        imgPreview.ImageUrl = string.IsNullOrEmpty(anh) ? "~/Images/no-image.png" : "~/Images/" + anh;
+                        imgPreview.ImageUrl = string.IsNullOrEmpty(anh) ? "~/Images/no-image.png" : "~/Images/Danhmuc/" + anh;
                     }
                 }
                 lblTieuDeForm.Text = "CẬP NHẬT DANH MỤC (#" + id + ")";

@@ -179,7 +179,7 @@ namespace WebBanLaptop.Admin
             {
                 string ext = Path.GetExtension(fuAnhDaiDien.FileName).ToLower();
                 anhDaiDien = "sp_" + DateTime.Now.Ticks + ext;
-                fuAnhDaiDien.SaveAs(Server.MapPath("~/Images/" + anhDaiDien));
+                fuAnhDaiDien.SaveAs(Server.MapPath("~/Images/Sanpham/" + anhDaiDien));
             }
 
             object giaKMValue = string.IsNullOrWhiteSpace(txtGiaKhuyenMai.Text)
@@ -271,7 +271,7 @@ namespace WebBanLaptop.Admin
                         {
                             index++;
                             string subImgName = "album_" + maSanPham + "_" + DateTime.Now.Ticks + "_" + index + ext;
-                            file.SaveAs(Server.MapPath("~/Images/" + subImgName));
+                            file.SaveAs(Server.MapPath("~/Images/Sanpham/" + subImgName));
 
                             string sqlImg = "INSERT INTO tblHinhAnhSanPham (MaSanPham, DuongDanAnh, LaAnhChinh) VALUES (@MaSanPham, @DuongDanAnh, 0)";
                             SqlCommand cmdImg = new SqlCommand(sqlImg, conn);
@@ -340,7 +340,7 @@ namespace WebBanLaptop.Admin
 
                         string anh = reader["AnhDaiDien"] != DBNull.Value ? reader["AnhDaiDien"].ToString() : "no-image.png";
                         hfAnhDaiDienCu.Value = anh;
-                        imgPreview.ImageUrl = string.IsNullOrEmpty(anh) ? "" : anh;
+                        imgPreview.ImageUrl = (string.IsNullOrEmpty(anh) || anh == "no-image.png") ? "~/Images/no-image.png" : "~/Images/Sanpham/" + anh;
 
                         txtCPU.Text = reader["CPU"].ToString();
                         txtRAM.Text = reader["RAM"].ToString();
@@ -381,7 +381,7 @@ namespace WebBanLaptop.Admin
                 {
                     // Bắt lỗi khóa ngoại nếu sản phẩm đã nằm trong chi tiết đơn hàng
                     HienThiThongBao("Sản phẩm này đã phát sinh đơn hàng nên không thể xóa! Hãy chuyển trạng thái sang 'Ngừng kinh doanh'.", false);
-                }
+                }   
             }
         }
 

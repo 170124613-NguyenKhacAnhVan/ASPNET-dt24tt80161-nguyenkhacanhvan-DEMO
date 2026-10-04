@@ -39,7 +39,7 @@
                             CssClass="brand-box bg-white border rounded p-3 d-block shadow-sm"
                             ToolTip='<%# Eval("TenThuongHieu") %>'>
                             <asp:Image ID="imgLogo" runat="server"
-                                ImageUrl='<%# Eval("Logo") %>'
+                                ImageUrl='<%# Eval("Logo", "~/Images/Thuonghieu/{0}") %>'
                                 AlternateText='<%# Eval("TenThuongHieu") %>'
                                 CssClass="img-fluid"
                                 Style="height: 30px; object-fit: contain;" />
@@ -62,7 +62,7 @@
                                 NavigateUrl='<%# "~/Default.aspx?danhmuc=" + Eval("MaDanhMuc") %>'
                                 CssClass="text-decoration-none text-dark d-block p-2 border rounded bg-light h-100">
                                 <asp:Image ID="imgDanhMuc" runat="server"
-                                    ImageUrl='<%# Eval("HinhAnh") %>'
+                                    ImageUrl='<%# Eval("HinhAnh", "~/Images/Danhmuc/{0}") %>'
                                     AlternateText='<%# Eval("TenDanhMuc") %>'
                                     CssClass="rounded mb-2 w-100"
                                     Style="height: 70px; object-fit: cover;" />
@@ -93,7 +93,7 @@
                                
                                 </div>
                                 <a href='<%# "ChiTietSanPham.aspx?id=" + Eval("MaSanPham") %>'>
-                                    <img src='<%# Eval("AnhDaiDien") %>' class="card-img-top p-3" style="height: 200px; object-fit: contain;" alt='<%# Eval("TenSanPham") %>'>
+                                    <img src='<%# Eval("AnhDaiDien", "/Images/Sanpham/{0}") %>' class="card-img-top p-3" style="height: 200px; object-fit: contain;" alt='<%# Eval("TenSanPham") %>'>
                                 </a>
                                 <div class="card-body pt-0">
                                     <a href='<%# "ChiTietSanPham.aspx?id=" + Eval("MaSanPham") %>' class="text-decoration-none text-dark">
@@ -132,7 +132,7 @@
                                 <div class="col">
                                     <div class="card h-100 product-card shadow-sm border-light">
                                         <a href='<%# "ChiTietSanPham.aspx?id=" + Eval("MaSanPham") %>'>
-                                            <img src='<%# Eval("AnhDaiDien") %>' class="card-img-top p-3" style="height: 200px; object-fit: contain;" alt='<%# Eval("TenSanPham") %>'>
+                                            <img src='<%# Eval("AnhDaiDien", "Images/Sanpham/{0}") %>' class="card-img-top p-3" style="height: 200px; object-fit: contain;" alt='<%# Eval("TenSanPham") %>'>
                                         </a>
                                         <div class="card-body pt-0">
                                             <a href='<%# "ChiTietSanPham.aspx?id=" + Eval("MaSanPham") %>' class="text-decoration-none text-dark">
