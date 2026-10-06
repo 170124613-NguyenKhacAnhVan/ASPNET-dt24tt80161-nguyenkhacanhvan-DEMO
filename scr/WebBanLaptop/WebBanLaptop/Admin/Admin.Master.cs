@@ -20,7 +20,7 @@ namespace WebBanLaptop.Admin
                 string avatar = Session["Avatar"] != null && !string.IsNullOrEmpty(Session["Avatar"].ToString())
                                 ? Session["Avatar"].ToString()
                                 : "default-avatar.png";
-                imgAdminAvatar.ImageUrl = "~/Images/" + avatar;
+                imgAdminAvatar.ImageUrl = "~/Images/Avatar/" + avatar;
             }
         }
 

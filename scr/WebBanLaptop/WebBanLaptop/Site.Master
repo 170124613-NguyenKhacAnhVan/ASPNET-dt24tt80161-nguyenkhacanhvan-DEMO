@@ -65,7 +65,7 @@
                     <asp:Panel ID="pnlDaDangNhap" runat="server" Visible="false" CssClass="d-flex align-items-center gap-2">
                         <a class="nav-link text-white d-flex align-items-center gap-2 p-1 text-nowrap" href="../TrangHoSo" title="Xem hồ sơ cá nhân">
                             <asp:Image ID="imgAvatarNav" runat="server"
-                                ImageUrl="~/Images/default-avatar.png"
+                                ImageUrl="~/Images/Avatar/user.png"
                                 CssClass="rounded-circle border border-2 border-warning object-fit-cover bg-white"
                                 Style="width: 40px; height: 40px;" />
                             <div class="d-none d-sm-flex flex-column lh-sm">
@@ -106,7 +106,7 @@
                 </div>
 
                 <div class="collapse navbar-collapse order-lg-2 flex-grow-1 mt-3 mt-lg-0 mx-0 mx-lg-4" id="navbarMain">
-                    <div class="input-group w-100">
+                    <asp:Panel ID="pnlTimKiem" runat="server" DefaultButton="btnTimKiemHeader" CssClass="input-group w-100">
                         <asp:TextBox ID="txtTimKiemHeader" runat="server"
                             CssClass="form-control border-0 py-2 px-3"
                             Style="max-width: 100%;"
@@ -114,9 +114,9 @@
                         <asp:LinkButton ID="btnTimKiemHeader" runat="server"
                             CssClass="btn btn-light text-danger bg-white border-0 px-3 d-flex align-items-center"
                             OnClick="btnTimKiemHeader_Click">
-                    <i class="bi bi-search fs-5"></i>
+                            <i class="bi bi-search fs-5"></i>
                         </asp:LinkButton>
-                    </div>
+                    </asp:Panel>
                 </div>
             </div>
         </nav>

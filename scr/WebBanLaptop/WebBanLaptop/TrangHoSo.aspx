@@ -228,7 +228,7 @@
                 <div class="modal-body text-center p-4">
                     <!-- Ảnh đại diện phóng to (240x240px) -->
                     <asp:Image ID="imgAvatarModal" runat="server"
-                        ImageUrl="~/Images/default-avatar.png"
+                        ImageUrl="~/Images/Avatar/user.png"
                         CssClass="rounded-circle border border-4 border-danger border-opacity-25 shadow object-fit-cover bg-light mb-4"
                         Style="width: 240px; height: 240px;" />
 

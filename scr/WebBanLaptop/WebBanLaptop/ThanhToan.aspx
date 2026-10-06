@@ -27,17 +27,37 @@
                         </div>
                         <div class="card-body p-4">
                             <div class="mb-3">
-                                <label class="form-label fw-semibold">Họ và tên người nhận</label>
+                                <label class="form-label fw-semibold">Họ và tên người nhận <span class="text-danger">*</span></label>
                                 <asp:TextBox ID="txtHoTen" runat="server" CssClass="form-control" placeholder="Nhập họ tên..."></asp:TextBox>
+                                <asp:RequiredFieldValidator ID="rfvHoTen" runat="server"
+                                    ControlToValidate="txtHoTen" ValidationGroup="vgThanhToan"
+                                    ErrorMessage="Vui lòng nhập họ tên người nhận!"
+                                    CssClass="text-danger small mt-1" Display="Dynamic" />
                             </div>
+
                             <div class="mb-3">
-                                <label class="form-label fw-semibold">Số điện thoại</label>
+                                <label class="form-label fw-semibold">Số điện thoại <span class="text-danger">*</span></label>
                                 <asp:TextBox ID="txtSoDienThoai" runat="server" CssClass="form-control" placeholder="Nhập số điện thoại..."></asp:TextBox>
+                                <asp:RequiredFieldValidator ID="rfvSoDienThoai" runat="server"
+                                    ControlToValidate="txtSoDienThoai" ValidationGroup="vgThanhToan"
+                                    ErrorMessage="Vui lòng nhập số điện thoại!"
+                                    CssClass="text-danger small mt-1" Display="Dynamic" />
+                                <asp:RegularExpressionValidator ID="revSoDienThoai" runat="server"
+                                    ControlToValidate="txtSoDienThoai" ValidationGroup="vgThanhToan"
+                                    ValidationExpression="^(0|\+84)[3|5|7|8|9][0-9]{8}$"
+                                    ErrorMessage="Số điện thoại không hợp lệ (VD: 098...)"
+                                    CssClass="text-danger small mt-1" Display="Dynamic" />
                             </div>
+
                             <div class="mb-3">
-                                <label class="form-label fw-semibold">Địa chỉ giao hàng</label>
+                                <label class="form-label fw-semibold">Địa chỉ giao hàng <span class="text-danger">*</span></label>
                                 <asp:TextBox ID="txtDiaChi" runat="server" CssClass="form-control" TextMode="MultiLine" Rows="2" placeholder="Số nhà, đường, phường/xã..."></asp:TextBox>
+                                <asp:RequiredFieldValidator ID="rfvDiaChi" runat="server"
+                                    ControlToValidate="txtDiaChi" ValidationGroup="vgThanhToan"
+                                    ErrorMessage="Vui lòng nhập địa chỉ giao hàng chi tiết!"
+                                    CssClass="text-danger small mt-1" Display="Dynamic" />
                             </div>
+
                             <div class="mb-3">
                                 <label class="form-label fw-semibold">Phương thức thanh toán</label>
                                 <asp:DropDownList ID="ddlPhuongThuc" runat="server" CssClass="form-select">
@@ -60,7 +80,7 @@
                                 <asp:Repeater ID="rptDonHang" runat="server">
                                     <ItemTemplate>
                                         <div class="d-flex align-items-center mb-3 pb-3 border-bottom">
-                                            <img src='<%# Eval("AnhDaiDien") %>' alt="Laptop" class="img-thumbnail me-3" style="width: 70px; height: 70px; object-fit: cover;" />
+                                            <img src='<%# Eval("AnhDaiDien", "Images/Sanpham/{0}") %>' alt="Laptop" class="img-thumbnail me-3" style="width: 70px; height: 70px; object-fit: cover;" />
                                             <div class="flex-grow-1">
                                                 <h6 class="mb-1 text-truncate" style="max-width: 200px;"><%# Eval("TenSanPham") %></h6>
                                                 <small class="text-muted">SL: <%# Eval("SoLuong") %> x <%# Eval("DonGia", "{0:N0} đ") %></small>
@@ -81,7 +101,9 @@
                             </div>
 
                             <asp:Button ID="btnDatHang" runat="server" Text="Xác Nhận Đặt Hàng"
-                                CssClass="btn btn-success btn-lg w-100 fw-bold" OnClick="btnDatHang_Click" />
+                                CssClass="btn btn-success btn-lg w-100 fw-bold"
+                                ValidationGroup="vgThanhToan"
+                                OnClick="btnDatHang_Click" />
                         </div>
                     </div>
                 </div>

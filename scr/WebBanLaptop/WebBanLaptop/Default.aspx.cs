@@ -42,7 +42,7 @@ namespace WebBanLaptop
         // 3. Tải 4 sản phẩm giảm giá nhiều nhất lên rptKhuyenMai
         private void LoadKhuyenMaiHot()
         {
-            if (!string.IsNullOrEmpty(Request.QueryString["danhmuc"]) || !string.IsNullOrEmpty(Request.QueryString["thuonghieu"]))
+            if (!string.IsNullOrEmpty(Request.QueryString["danhmuc"]) || !string.IsNullOrEmpty(Request.QueryString["thuonghieu"]) || !string.IsNullOrEmpty(Request.QueryString["search"]))
             {
                 pnlKhuyenMai.Visible = false;
                 return;
@@ -68,6 +68,7 @@ namespace WebBanLaptop
         {
             string maDanhMucFilter = Request.QueryString["danhmuc"];
             string maThuongHieuFilter = Request.QueryString["thuonghieu"];
+            string searchKeyword = Request.QueryString["search"];
 
             string sql = @"
                 SELECT DISTINCT dm.MaDanhMuc, dm.TenDanhMuc
@@ -92,6 +93,12 @@ namespace WebBanLaptop
                     cmd.Parameters.AddWithValue("@MaThuongHieu", maThuongHieuFilter);
                 }
 
+                if (!string.IsNullOrEmpty(searchKeyword))
+                {
+                    sql += " AND sp.TenSanPham LIKE @Search";
+                    cmd.Parameters.AddWithValue("@Search", "%" + searchKeyword.Trim() + "%");
+                }
+
                 sql += " ORDER BY dm.MaDanhMuc ASC";
                 cmd.CommandText = sql;
 
@@ -113,6 +120,7 @@ namespace WebBanLaptop
                 Repeater rptSanPhamTheoDanhMuc = (Repeater)e.Item.FindControl("rptSanPhamTheoDanhMuc");
 
                 string maThuongHieuFilter = Request.QueryString["thuonghieu"];
+                string searchKeyword = Request.QueryString["search"];
 
                 string sql = @"
                     SELECT TOP 4
@@ -141,6 +149,12 @@ namespace WebBanLaptop
                         cmd.Parameters.AddWithValue("@MaThuongHieu", maThuongHieuFilter);
                     }
 
+                    if (!string.IsNullOrEmpty(searchKeyword))
+                    {
+                        sql += " AND sp.TenSanPham LIKE @Search";
+                        cmd.Parameters.AddWithValue("@Search", "%" + searchKeyword.Trim() + "%");
+                    }
+
                     sql += " ORDER BY sp.MaSanPham DESC";
                     cmd.CommandText = sql;
 
@@ -165,6 +179,5 @@ namespace WebBanLaptop
                 return dt;
             }
         }
-
     }
 }

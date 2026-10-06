@@ -99,7 +99,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="About.aspx" />
     <Content Include="Admin\QuanLyDanhMuc.aspx" />
     <Content Include="Admin\QuanLyDonHang.aspx" />
     <Content Include="Admin\QuanLySanPham.aspx" />
@@ -107,7 +106,6 @@
     <Content Include="Admin\QuanLyThuongHieu.aspx" />
     <Content Include="Admin\TrangQuanTri.aspx" />
     <Content Include="ChiTietSanPham.aspx" />
-    <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-grid.rtl.css" />
@@ -129,6 +127,11 @@
     <Content Include="favicon.ico" />
     <Content Include="GioHang.aspx" />
     <Content Include="Global.asax" />
+    <Content Include="Images\AnhBia\1.png" />
+    <Content Include="Images\AnhBia\2.png" />
+    <Content Include="Images\AnhBia\3.png" />
+    <Content Include="Images\Avatar\admin.png" />
+    <Content Include="Images\Avatar\user.png" />
     <Content Include="Images\LOGO DANG KHOA WHITE.png" />
     <Content Include="Images\LOGO DANG KHOA.png" />
     <Content Include="Images\no-image.png" />
@@ -256,13 +259,6 @@
       <DependentUpon>TrangQuanTri.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
-    <Compile Include="About.aspx.cs">
-      <DependentUpon>About.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="About.aspx.designer.cs">
-      <DependentUpon>About.aspx</DependentUpon>
-    </Compile>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="ChiTietSanPham.aspx.cs">
       <DependentUpon>ChiTietSanPham.aspx</DependentUpon>
@@ -270,13 +266,6 @@
     </Compile>
     <Compile Include="ChiTietSanPham.aspx.designer.cs">
       <DependentUpon>ChiTietSanPham.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Contact.aspx.cs">
-      <DependentUpon>Contact.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Contact.aspx.designer.cs">
-      <DependentUpon>Contact.aspx</DependentUpon>
     </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
@@ -348,7 +337,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Images\Avatar\" />
     <Folder Include="Images\Danhmuc\" />
     <Folder Include="Images\Sanpham\" />
   </ItemGroup>

@@ -22,7 +22,7 @@ namespace WebBanLaptop
                 string avatarFile = Session["Avatar"] != null && !string.IsNullOrEmpty(Session["Avatar"].ToString())
                                     ? Session["Avatar"].ToString()
                                     : "default-avatar.png";
-                imgAvatarNav.ImageUrl = "~/Images/" + avatarFile;
+                imgAvatarNav.ImageUrl = "~/Images/Avatar/" + avatarFile;
             }
             else
             {
@@ -60,9 +60,11 @@ namespace WebBanLaptop
             Session.Abandon();
             Response.Redirect("~/Default.aspx");
         }
-        protected void btnTimKiemHeader_Click(object sender, EventArgs e) 
+
+        protected void btnTimKiemHeader_Click(object sender, EventArgs e)
         {
             string tuKhoa = txtTimKiemHeader.Text.Trim();
+
             if (!string.IsNullOrEmpty(tuKhoa))
             {
                 Response.Redirect("~/Default.aspx?search=" + Server.UrlEncode(tuKhoa));

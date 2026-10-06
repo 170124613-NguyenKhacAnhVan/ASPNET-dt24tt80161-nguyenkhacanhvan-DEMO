@@ -42,6 +42,15 @@ namespace WebBanLaptop
         protected global::System.Web.UI.WebControls.TextBox txtHoTen;
 
         /// <summary>
+        /// rfvHoTen control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvHoTen;
+
+        /// <summary>
         /// txtSoDienThoai control.
         /// </summary>
         /// <remarks>
@@ -51,6 +60,24 @@ namespace WebBanLaptop
         protected global::System.Web.UI.WebControls.TextBox txtSoDienThoai;
 
         /// <summary>
+        /// rfvSoDienThoai control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvSoDienThoai;
+
+        /// <summary>
+        /// revSoDienThoai control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator revSoDienThoai;
+
+        /// <summary>
         /// txtDiaChi control.
         /// </summary>
         /// <remarks>
@@ -58,6 +85,15 @@ namespace WebBanLaptop
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtDiaChi;
+
+        /// <summary>
+        /// rfvDiaChi control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvDiaChi;
 
         /// <summary>
         /// ddlPhuongThuc control.

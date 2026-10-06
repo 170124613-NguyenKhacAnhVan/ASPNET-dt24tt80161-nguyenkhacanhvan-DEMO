@@ -11,13 +11,13 @@
             </div>
             <div class="carousel-inner rounded shadow-sm">
                 <div class="carousel-item active">
-                    <img src="https://images.unsplash.com/photo-1593640408182-31c70c8268f5?auto=format&fit=crop&w=1200&h=400&q=80" class="d-block w-100" alt="Khuyến mãi 1" style="object-fit: cover; height: 400px;">
+                    <img src="Images/AnhBia/1.png" class="d-block w-100" alt="Khuyến mãi 1" style="object-fit: cover; height: 400px;">
                 </div>
                 <div class="carousel-item">
-                    <img src="https://images.unsplash.com/photo-1603302576837-37561b2e2302?auto=format&fit=crop&w=1200&h=400&q=80" class="d-block w-100" alt="Khuyến mãi 2" style="object-fit: cover; height: 400px;">
+                    <img src="Images/AnhBia/2.png" class="d-block w-100" alt="Khuyến mãi 2" style="object-fit: cover; height: 400px;">
                 </div>
                 <div class="carousel-item">
-                    <img src="https://images.unsplash.com/photo-1525547719571-a2d4ac8945e2?auto=format&fit=crop&w=1200&h=400&q=80" class="d-block w-100" alt="Khuyến mãi 3" style="object-fit: cover; height: 400px;">
+                    <img src="Images/AnhBia/3.png" class="d-block w-100" alt="Khuyến mãi 3" style="object-fit: cover; height: 400px;">
                 </div>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#homeCarousel" data-bs-slide="prev">

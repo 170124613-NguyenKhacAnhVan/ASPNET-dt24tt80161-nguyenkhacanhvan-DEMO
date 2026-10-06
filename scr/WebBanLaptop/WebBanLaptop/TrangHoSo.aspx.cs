@@ -84,8 +84,8 @@ namespace WebBanLaptop
                     lblSidebarUsername.Text = username;
 
                     // Gán đường dẫn ảnh cho cả hình tròn bên ngoài và hình phóng to trong Modal
-                    imgAvatarHienTai.ImageUrl = "~/Images/" + avatar;
-                    imgAvatarModal.ImageUrl = "~/Images/" + avatar;
+                    imgAvatarHienTai.ImageUrl = "~/Images/Avatar/" + avatar;
+                    imgAvatarModal.ImageUrl = "~/Images/Avatar/" + avatar;
 
                     if (role == 1)
                     {
@@ -119,7 +119,7 @@ namespace WebBanLaptop
 
             int userId = Convert.ToInt32(Session["UserID"]);
             string avatarFileName = "avatar_" + userId + "_" + DateTime.Now.Ticks + ext;
-            string savePath = Server.MapPath("~/Images/" + avatarFileName);
+            string savePath = Server.MapPath("~/Images/Avatar/" + avatarFileName);
             fuAvatar.SaveAs(savePath);
 
             using (SqlConnection conn = new SqlConnection(connStr))

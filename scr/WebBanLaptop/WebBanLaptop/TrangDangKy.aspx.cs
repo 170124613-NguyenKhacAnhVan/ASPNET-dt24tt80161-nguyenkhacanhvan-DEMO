@@ -72,7 +72,7 @@ namespace WebBanLaptop
                 cmd.Parameters.AddWithValue("@Password", passwordMD5);
                 cmd.Parameters.AddWithValue("@Fullname", fullname);
                 cmd.Parameters.AddWithValue("@Address", string.IsNullOrEmpty(address) ? (object)DBNull.Value : address);
-                cmd.Parameters.AddWithValue("@Avatar", "default-avatar.png");
+                cmd.Parameters.AddWithValue("@Avatar", "user.png");
                 cmd.Parameters.AddWithValue("@Email", string.IsNullOrEmpty(email) ? (object)DBNull.Value : email);
                 cmd.Parameters.AddWithValue("@Phone", phone);
 

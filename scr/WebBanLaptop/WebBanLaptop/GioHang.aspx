@@ -22,7 +22,7 @@
                     <Columns>
                         <asp:TemplateField HeaderText="Hình ảnh">
                             <ItemTemplate>
-                                <img src='<%# Eval("AnhDaiDien") %>' alt="Laptop" style="width: 80px; height: auto;" class="img-thumbnail" />
+                                <img src='<%# Eval("AnhDaiDien", "Images/Sanpham/{0}") %>' alt="Laptop" style="width: 80px; height: auto;" class="img-thumbnail" />
                             </ItemTemplate>
                         </asp:TemplateField>
 
