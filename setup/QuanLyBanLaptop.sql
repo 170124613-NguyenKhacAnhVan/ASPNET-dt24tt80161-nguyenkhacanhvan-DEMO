@@ -122,13 +122,13 @@ CREATE TABLE tblChiTietDonHang (
 GO
 
 -- =============================================
--- DỮ LIỆU MẪU (Đã chuẩn hóa ảnh)
+-- DỮ LIỆU MẪU
 -- =============================================
 
 -- TÀI KHOẢN NGƯỜI DÙNG
 INSERT INTO tblUser (Username, Password, Fullname, Address, Status, Role, Avatar, Email, Phone)
 VALUES 
-('admin', 'e10adc3949ba59abbe56e057f20f883e', N'Admin', NULL, 1, 1, 'default-avatar.png', NULL, '0912334354');
+('admin', 'e10adc3949ba59abbe56e057f20f883e', N'Admin', NULL, 1, 1, 'admin.png', NULL, '0912334354');
 GO
 
 -- DANH MỤC
@@ -206,4 +206,61 @@ VALUES
 (9, 'album_9_639267245130368935_2.jpg', 0),
 (10, 'album_10_639267239155884888_1.jpg', 0),
 (10, 'album_10_639267239155912468_2.jpg', 0);
+GO
+
+SET IDENTITY_INSERT tblDonHang ON;
+
+INSERT INTO tblDonHang (MaDonHang, UserID, HoTenNguoiNhan, SoDienThoai, DiaChiGiaoHang, TongTien, TrangThai, PhuongThucThanhToan, GhiChu, NgayTao)
+VALUES 
+(101, 1, N'Trần Văn Long', '0901234567', N'Quận 1, TP.HCM', 25490000, 2, 'COD', N'Giao giờ hành chính', '2025-01-15 10:30:00'),
+(102, 2, N'Lê Thị Hoa', '0912345678', N'Ba Đình, Hà Nội', 41990000, 2, 'Banking', N'', '2025-02-20 14:15:00'),
+(103, NULL, N'Nguyễn Hoàng Nam', '0987654321', N'Hải Châu, Đà Nẵng', 10990000, 3, 'COD', N'Khách đổi ý hủy đơn', '2025-03-10 09:00:00'), -- Đơn hủy
+(104, 4, N'Phạm Thu Thủy', '0933445566', N'Ninh Kiều, Cần Thơ', 32490000, 2, 'Banking', N'', '2025-04-05 16:45:00'),
+(105, 1, N'Đặng Văn Sơn', '0977889900', N'Gò Vấp, TP.HCM', 33280000, 2, 'COD', N'Gọi trước khi giao', '2025-05-12 11:20:00'),
+(106, 2, N'Vũ Hải Yến', '0922334455', N'Thanh Xuân, Hà Nội', 46990000, 2, 'Banking', N'', '2025-06-18 15:30:00'),
+(107, NULL, N'Bùi Tấn Trường', '0966778899', N'Quận 3, TP.HCM', 24990000, 2, 'COD', N'', '2025-07-22 08:45:00'),
+(108, 4, N'Đoàn Bảo Châu', '0944556677', N'Đà Lạt, Lâm Đồng', 19490000, 2, 'Banking', N'', '2025-09-09 13:10:00'),
+(109, 1, N'Trịnh Quốc Vượng', '0900112233', N'Quận 7, TP.HCM', 35990000, 2, 'COD', N'', '2025-11-11 19:00:00'),
+(110, 2, N'Lý Nhã Kỳ', '0999888777', N'Cầu Giấy, Hà Nội', 50980000, 2, 'Banking', N'Mua tặng sinh nhật', '2025-12-25 20:30:00'),
+
+
+(201, NULL, N'Hồ Quang Hiếu', '0911223344', N'Biên Hòa, Đồng Nai', 14990000, 2, 'COD', N'', '2026-01-05 09:20:00'),
+(202, 4, N'Ngô Thanh Vân', '0955667788', N'Quận 2, TP.HCM', 32490000, 2, 'Banking', N'', '2026-02-14 14:00:00'),
+(203, 1, N'Thái Hòa', '0988776655', N'Tân Bình, TP.HCM', 10990000, 2, 'COD', N'', '2026-03-08 10:15:00'),
+(204, 2, N'Lương Mạnh Hải', '0933221100', N'Đống Đa, Hà Nội', 68480000, 2, 'Banking', N'Đơn sỉ công ty', '2026-04-30 11:45:00'),
+(205, NULL, N'Mỹ Tâm', '0900998877', N'Hải Châu, Đà Nẵng', 24990000, 2, 'COD', N'', '2026-05-15 15:00:00'),
+(206, 4, N'Sơn Tùng', '0966554433', N'Thái Bình', 41990000, 3, 'Banking', N'Khách hủy do sai địa chỉ', '2026-07-20 16:30:00'), -- Đơn hủy
+(207, 1, N'Đen Vâu', '0922110099', N'Quận 4, TP.HCM', 18290000, 2, 'COD', N'', '2026-08-10 09:10:00'),
+(208, 2, N'Minh Tú', '0977665544', N'Thủ Đức, TP.HCM', 19490000, 2, 'Banking', N'', '2026-09-15 14:20:00'),
+(209, NULL, N'Võ Hoàng Yến', '0944332211', N'Quận 10, TP.HCM', 25490000, 1, 'COD', N'Giao trong ngày', '2026-09-28 08:30:00'), -- Đang giao
+(210, 4, N'Nguyễn Thúc Thùy Tiên', '0999111222', N'Bình Thạnh, TP.HCM', 46990000, 0, 'Banking', N'', '2026-10-02 21:00:00'); -- Chờ xác nhận
+
+SET IDENTITY_INSERT tblDonHang OFF;
+
+INSERT INTO tblChiTietDonHang (MaDonHang, MaSanPham, SoLuong, DonGia)
+VALUES
+(101, 1, 1, 25490000), -- MacBook Air M3
+(102, 3, 1, 41990000), -- Dell XPS
+(103, 8, 1, 10990000), -- ASUS Vivobook
+(104, 7, 1, 32490000), -- ASUS ROG
+(105, 4, 1, 14990000), -- Dell Inspiron
+(105, 5, 1, 18290000), -- HP Pavilion
+(106, 2, 1, 46990000), -- MacBook Pro
+(107, 6, 1, 24990000), -- HP Gaming
+(108, 10, 1, 19490000), -- Acer Nitro
+(109, 9, 1, 35990000), -- Lenovo Legion
+(110, 1, 2, 25490000), -- 2x MacBook Air
+
+(201, 4, 1, 14990000), -- Dell Inspiron
+(202, 7, 1, 32490000), -- ASUS ROG
+(203, 8, 1, 10990000), -- ASUS Vivobook
+(204, 9, 1, 35990000), -- Lenovo Legion
+(204, 7, 1, 32490000), -- ASUS ROG
+(205, 6, 1, 24990000), -- HP Gaming
+(206, 3, 1, 41990000), -- Dell XPS
+(207, 5, 1, 18290000), -- HP Pavilion
+(208, 10, 1, 19490000), -- Acer Nitro
+(209, 1, 1, 25490000), -- MacBook Air
+(210, 2, 1, 46990000); -- MacBook Pro
+
 GO
