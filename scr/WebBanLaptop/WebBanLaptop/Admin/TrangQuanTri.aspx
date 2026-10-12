@@ -16,7 +16,7 @@
                 <label class="small fw-semibold text-secondary text-nowrap">Năm thống kê:</label>
                 <asp:DropDownList ID="ddlNamThongKe" runat="server" AutoPostBack="true"
                     CssClass="form-select form-select-sm fw-bold border-danger text-danger"
-                    Style="width: 110px;"
+                    Style="width: 115px;"
                     OnSelectedIndexChanged="ddlNamThongKe_SelectedIndexChanged">
                     <asp:ListItem Value="2026" Selected="True">Năm 2026</asp:ListItem>
                     <asp:ListItem Value="2025">Năm 2025</asp:ListItem>
